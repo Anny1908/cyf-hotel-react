@@ -7,7 +7,7 @@ const TouristInfoCards = props => {
       {props.ciudades.map((ciudad, index) => {
         return (
           <div key={index} className="card">
-            <img src={ciudad.img} className="card-img-top" />
+            <img src={ciudad.img} className="card-img-top" alt="city" />
             <div className="card-body">
               <a href={"https://" + ciudad.url} className="btn btn-primary">
                 Go to{ciudad.nombre}

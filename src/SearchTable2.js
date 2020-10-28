@@ -1,7 +1,15 @@
+import moment from "moment";
 import React from "react";
+
+//var a = moment([2007, 0, 29]);
+//var b = moment([2007, 0, 28]);
+//a.diff(b, 'days') // 1
 
 const SearchTable2 = props => {
   console.log("cliente", props.cliente);
+  let checkIn = moment(props.cliente.checkInDate);
+  let checkOut = moment(props.cliente.checkOutDate);
+
   return (
     <tbody>
       <tr>
@@ -13,6 +21,7 @@ const SearchTable2 = props => {
         <td>{props.cliente.roomId}</td>
         <td>{props.cliente.checkInDate}</td>
         <td>{props.cliente.checkOutDate}</td>
+        <td>{checkOut.diff(checkIn, "days")}</td>
       </tr>
     </tbody>
   );

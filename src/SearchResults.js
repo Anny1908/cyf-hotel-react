@@ -4,11 +4,11 @@ import SearchTable2 from "./SearchTable2";
 
 const SearchResults = props => {
   return (
-    <table class="table">
+    <table className="table">
       <SearchTable1 />
       {props.results.map((cliente, index) => {
         console.log(cliente);
-        return <SearchTable2 cliente={cliente} />;
+        return <SearchTable2 key={index} cliente={cliente} />;
       })}
     </table>
   );
