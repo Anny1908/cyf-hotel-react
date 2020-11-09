@@ -1,7 +1,7 @@
 import React from "react";
 
 const TouristInfoCards = props => {
-  console.log(props);
+  // console.log(props);
   return (
     <div className="tarjetas">
       {props.ciudades.map((ciudad, index) => {

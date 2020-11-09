@@ -7,8 +7,12 @@ const SearchResults = props => {
     <table className="table">
       <SearchTable1 />
       {props.results.map((cliente, index) => {
-        console.log(cliente);
-        return <SearchTable2 key={index} cliente={cliente} />;
+        /*console.log(cliente);*/
+        return (
+          <div>
+            <SearchTable2 key={index} cliente={cliente} />
+          </div>
+        );
       })}
     </table>
   );

@@ -5,6 +5,7 @@ import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
 
 let ciudades = [
   {
@@ -36,9 +37,9 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
-      <TouristInfoCards ciudades={ciudades} />
-      <Bookings />
-      <Footer array={footer} />
+      <TouristInfoCards ciudades={ciudades} /> <Bookings />
+      <Restaurant />
+      <Footer array={footer} />{" "}
     </div>
   );
 };
