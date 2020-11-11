@@ -7,6 +7,7 @@ console.log("algo aqui de reserva");
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]); /*(FakeBookings)*/
+  const [load, setLoad] = useState(true);
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
@@ -19,19 +20,28 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/`)
+    fetch(`https://cyf-react.glitch.me/delayed`) //no se puede implementar lo que dice la tarea ya que se mpe el cod.
       .then(res => res.json())
       .then(data => {
         setBookings(data);
+        setLoad(false);
       });
   }, []);
   console.log("algo aqui nuevo", Bookings);
   return (
     <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        <SearchResults results={bookings} />
-      </div>
+      {bookings ? (
+        <div className="container">
+          <Search search={search} />
+          {!load ? (
+            <SearchResults results={bookings} />
+          ) : (
+            <span>Loading...</span>
+          )}
+        </div>
+      ) : (
+        <p>Error HTTP 500</p>
+      )}
     </div>
   );
 };

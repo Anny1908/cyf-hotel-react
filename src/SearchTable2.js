@@ -25,7 +25,7 @@ const SearchTable2 = props => {
     console.log(id);
   };
   return (
-    <div>
+    <>
       <tbody>
         <tr onClick={changeColor} className={select ? null : "purple"}>
           <th scope="row">{props.cliente.id}</th>
@@ -45,7 +45,7 @@ const SearchTable2 = props => {
       <span>
         <CustomerProfile id={id} />
       </span>
-    </div>
+    </>
   );
 };
 export default SearchTable2;
